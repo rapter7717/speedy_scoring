@@ -17,4 +17,19 @@ class GamesController extends AppController
 		$game = $this->Games->findById($id)->first();
 		$this->set(compact('game'));
 	}
+
+	public function add()
+	{
+
+		$game = $this->Games->newEntity();
+		if ($this->request->is('post')) {
+			$game = $this->Games->patchEntity($game,$this->request->getData());
+			if ($this->Games->save($game)) {
+				$this->Flash->success(__('New Game Added'));
+				return $this->redirect(['action' => 'index']);
+			}
+			$this->Flash->error(__('Something went wrong'));
+		}
+		$this->set('game',$game);
+	}
 }

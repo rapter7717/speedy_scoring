@@ -8,6 +8,7 @@ class GamesTable extends Table
 {
 	public function initialize(array $config)
 	{
+		
 		$this->addbehavior('Timestamp');
 	}
 }

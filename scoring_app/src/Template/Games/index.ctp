@@ -13,3 +13,4 @@
 		</tr>
 	<?php endforeach; ?>
 </table>
+<p><?php echo $this->Html->link('Add New Game',['action' => 'add']); ?></p>
