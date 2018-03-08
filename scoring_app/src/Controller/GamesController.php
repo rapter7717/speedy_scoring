@@ -30,6 +30,8 @@ class GamesController extends AppController
 			}
 			$this->Flash->error(__('Something went wrong'));
 		}
+		$categories = $this->Games->GameCategories->find('list');
+		$this->set("categories", $categories);
 		$this->set('game',$game);
 	}
 
@@ -45,6 +47,8 @@ class GamesController extends AppController
           $this->Flash->error(__('Unable to update this game.'));
       }
 
+	$categories = $this->Games->GameCategories->find('list');
+		$this->set("categories", $categories);
       $this->set('game', $game);
   }
 }

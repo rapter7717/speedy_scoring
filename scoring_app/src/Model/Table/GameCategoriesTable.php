@@ -4,12 +4,13 @@ namespace App\Model\Table;
 
 use Cake\ORM\Table;
 
-class GamesTable extends Table
+class GameCategoriesTable extends Table
 {
 	public function initialize(array $config)
 	{
-		$this->belongsTo('GameCategories');
-		$this->displayField('title');
+		
+		$this->hasMany('Games');
+		$this->displayField('name');
 		$this->addbehavior('Timestamp');
 	}
 }
