@@ -40,7 +40,7 @@ class AppController extends Controller
     public function initialize()
     {
         parent::initialize();
-
+        $this->viewBuilder()->setTheme('BasicTheme');
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
 

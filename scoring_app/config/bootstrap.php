@@ -214,3 +214,9 @@ Type::build('timestamp')
 if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 }
+
+/*loading in copied theme for class
+*/
+Plugin::load('BasicTheme', ['bootstrap' => true, 'routes' => true]);
+
+

@@ -32,4 +32,19 @@ class GamesController extends AppController
 		}
 		$this->set('game',$game);
 	}
+
+	public function edit($id = null)
+  {
+      $game = $this->Games->findById($id)->first();
+      if ($this->request->is(['post', 'put'])) {
+          $this->Games->patchEntity($game, $this->request->getData());
+          if ($this->Games->save($game)) {
+              $this->Flash->success(__('This game has been updated.'));
+              return $this->redirect(['action' => 'index']);
+          }
+          $this->Flash->error(__('Unable to update this game.'));
+      }
+
+      $this->set('game', $game);
+  }
 }
