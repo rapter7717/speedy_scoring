@@ -14,7 +14,7 @@ class GameCategoriesController extends AppController
 
 	public function view($id = null)
 	{
-		$game_categories = $this->GameCategories->findById($id)->contain(['Games'])->first();
+		$game_categories = $this->GameCategories->findById($id)->first();
 		$this->set(compact('game_categories'));
 	}
 

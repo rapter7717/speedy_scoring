@@ -1,3 +1,3 @@
-<h1>	<?php echo $game->title; ?>. </h1>
-<h2>	<?php echo $game->description; ?> </h2>
-<h2> 	<?php echo $game->category_id; ?> </h2>
+<h1>	TITLE: <?php echo $game->title; ?> </h1>
+<p>	 	DESCRIPTION: <?php echo $game->description; ?> </p>
+<p> 	CATEGORY ID: <?php echo $game->category_id; ?> </p>

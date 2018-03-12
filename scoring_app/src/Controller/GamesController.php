@@ -15,6 +15,8 @@ class GamesController extends AppController
 	public function view($id = null)
 	{
 		$game = $this->Games->findById($id)->first();
+		$categories = $this->Games->GameCategories->find('list');
+		$this->set("categories", $categories);
 		$this->set(compact('game'));
 	}
 
@@ -47,7 +49,7 @@ class GamesController extends AppController
           $this->Flash->error(__('Unable to update this game.'));
       }
 
-	$categories = $this->Games->GameCategories->find('list');
+		$categories = $this->Games->GameCategories->find('list');
 		$this->set("categories", $categories);
       $this->set('game', $game);
   }
